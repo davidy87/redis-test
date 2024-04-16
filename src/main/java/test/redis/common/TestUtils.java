@@ -10,6 +10,6 @@ public final class TestUtils {
 
     public static String getRandomId() {
         SplittableRandom random = new SplittableRandom();
-        return String.valueOf(random.nextInt(1, 10_000_000));
+        return String.valueOf(random.nextInt(1, 20_001));
     }
 }
