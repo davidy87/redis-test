@@ -10,7 +10,6 @@ import test.redis.common.RefreshToken;
 import test.redis.common.TestUtils;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -24,7 +23,7 @@ public class RedisRepositoryApiController {
     public String saveToRedisRepository() {
         RefreshToken refreshToken = RefreshToken.builder()
                 .id(TestUtils.getRandomId())
-                .token(UUID.randomUUID().toString())
+                .token(TestUtils.getRandomUUID())
                 .refreshTime(LocalDateTime.now())
                 .build();
 

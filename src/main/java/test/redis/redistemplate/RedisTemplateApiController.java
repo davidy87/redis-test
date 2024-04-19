@@ -16,7 +16,6 @@ import test.redis.common.TestUtils;
 
 import java.time.LocalDateTime;
 import java.util.Map;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 @RequestMapping("/redis-template")
@@ -31,7 +30,7 @@ public class RedisTemplateApiController {
     public String saveToHashRedisTemplate() {
         RefreshToken refreshToken = RefreshToken.builder()
                 .id(TestUtils.getRandomId())
-                .token(UUID.randomUUID().toString())
+                .token(TestUtils.getRandomUUID())
                 .refreshTime(LocalDateTime.now())
                 .build();
 
@@ -53,7 +52,7 @@ public class RedisTemplateApiController {
     public String saveToStringRedisTemplate() {
         RefreshToken refreshToken = RefreshToken.builder()
                 .id(TestUtils.getRandomId())
-                .token(UUID.randomUUID().toString())
+                .token(TestUtils.getRandomUUID())
                 .refreshTime(LocalDateTime.now())
                 .build();
 
